@@ -12,7 +12,7 @@ namespace DirectoryDirectoryInfo
 
             try
             {
-                IEnumerable<string> folders = Directory.EnumerateDirectories(path, "*.*", SearchOption.AllDirectories);
+                var folders = Directory.EnumerateDirectories(path, "*.*", SearchOption.AllDirectories);
                 Console.WriteLine("Folders:");
                 foreach (string s in folders)
                 {
