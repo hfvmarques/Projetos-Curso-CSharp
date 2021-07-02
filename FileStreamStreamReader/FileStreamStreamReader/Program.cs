@@ -14,8 +14,11 @@ namespace FileStreamStreamReader
             try
             {
                 sr = File.OpenText(path);
-                string line = sr.ReadLine();
-                Console.WriteLine(line);
+                do
+                {                    
+                    string line = sr.ReadLine();
+                    Console.WriteLine(line);
+                } while (!sr.EndOfStream);
             }
             catch (IOException e)
             {
