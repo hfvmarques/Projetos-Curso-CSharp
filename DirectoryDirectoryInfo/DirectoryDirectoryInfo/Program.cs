@@ -18,6 +18,15 @@ namespace DirectoryDirectoryInfo
                 {
                     Console.WriteLine(s);
                 }
+
+                var files = Directory.EnumerateFiles(path, "*.*", SearchOption.AllDirectories);
+                Console.WriteLine("Files:");
+                foreach (string s in files)
+                {
+                    Console.WriteLine(s);
+                }
+
+                Directory.CreateDirectory(path + @"\newfolder");
             }
             catch (IOException e)
             {
