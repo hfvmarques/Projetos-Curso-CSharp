@@ -27,7 +27,7 @@ namespace InterfaceIComparable.Entities
                 throw new ArgumentException("Comparing error: argument is not and Employee");
             }
             Employee other = obj as Employee;
-            return Salary.CompareTo(other.Salary);
+            return Name.CompareTo(other.Name);
         }
     }
 }
