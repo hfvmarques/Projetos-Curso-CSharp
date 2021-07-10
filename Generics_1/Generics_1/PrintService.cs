@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Generics_1
 {
-    class PrintService
+    class PrintService<T>
     {
-        private int[] _values = new int[10];
+        private T[] _values = new T[10];
         private int _count = 0;
 
-        public void AddValue(int value)
+        public void AddValue(T value)
         {
             if (_count==10)
             {
@@ -21,7 +17,7 @@ namespace Generics_1
             _count++;
         }
 
-        public int First()
+        public T First()
         {
             if (_count == 0)
             {
