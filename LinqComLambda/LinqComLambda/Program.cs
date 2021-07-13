@@ -51,6 +51,9 @@ namespace LinqComLambda
 
             var r8 = products.Where(p => p.Id == 3).SingleOrDefault();
             Console.WriteLine("Single or default test1: " + r8);
+
+            var r9 = products.Where(p => p.Id == 30).SingleOrDefault();
+            Console.WriteLine("Single or default test2: " + r9);
         }
 
         static void Print<T>(string message, IEnumerable<T> collection)
