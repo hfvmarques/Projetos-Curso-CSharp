@@ -36,6 +36,9 @@ namespace LinqComLambda
 
             var r3 = products.Where(p => p.Name[0] == 'C').Select(p => new { p.Name, p.Price, CategoryName = p.Category.Name });
             Print("NAMES STARTED WITH 'C' AND ANONYMOUS OBJECT", r3);
+
+            var r4 = products.Where(p => p.Category.Tier == 1).OrderBy(p => p.Price).ThenBy(p => p.Name);
+            Print("TIER 1 ORDER BY PRICE THEN BY NAME:", r4);
         }
 
         static void Print<T>(string message, IEnumerable<T> collection)
