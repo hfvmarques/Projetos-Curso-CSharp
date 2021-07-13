@@ -60,6 +60,9 @@ namespace LinqComLambda
 
             var r11 = products.Min(p => p.Price);
             Console.WriteLine("Min price: " + r11);
+
+            var r12 = products.Where(p => p.Category.Id == 1).Sum(p => p.Price);
+            Console.WriteLine("Category 1 Sum prices: " + r12);
         }
 
         static void Print<T>(string message, IEnumerable<T> collection)
