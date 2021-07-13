@@ -72,6 +72,18 @@ namespace LinqComLambda
 
             var r15 = products.Where(p => p.Category.Id == 1).Select(p => p.Price).Aggregate(0.0, (x, y) => x + y);
             Console.WriteLine("Category 1 aggregate sum: " + r15);
+            Console.WriteLine();
+
+            var r16 = products.GroupBy(p => p.Category);
+            foreach (IGrouping<Category,Product> group in r16)
+            {
+                Console.WriteLine("Category "+ group.Key.Name+":");
+                foreach (Product p in group)
+                {
+                    Console.WriteLine(p);
+                }
+                Console.WriteLine();
+            }
         }
 
         static void Print<T>(string message, IEnumerable<T> collection)
