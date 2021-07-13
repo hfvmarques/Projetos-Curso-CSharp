@@ -54,6 +54,12 @@ namespace LinqComLambda
 
             var r9 = products.Where(p => p.Id == 30).SingleOrDefault();
             Console.WriteLine("Single or default test2: " + r9);
+
+            var r10 = products.Max(p => p.Price);
+            Console.WriteLine("Max price: " + r10);
+
+            var r11 = products.Min(p => p.Price);
+            Console.WriteLine("Min price: " + r11);
         }
 
         static void Print<T>(string message, IEnumerable<T> collection)
