@@ -14,7 +14,7 @@ namespace MulticastDelegates
             BinaryNumericOperation op = CalculationService.ShowSum;
             op += CalculationService.ShowMax;
 
-            op.Invoke(a, b);
+            op(a, b);
         }
     }
 }
