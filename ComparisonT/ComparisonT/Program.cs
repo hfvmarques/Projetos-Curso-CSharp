@@ -14,12 +14,17 @@ namespace ComparisonT
             list.Add(new Product("Notebook", 1200.0));
             list.Add(new Product("Tablet", 450.0));
 
-            list.Sort();
+            list.Sort(CompareProducts);
 
             foreach (Product p in list)
             {
                 Console.WriteLine(p);
             }
+        }
+
+        static int CompareProducts(Product p1, Product p2)
+        {
+            return p1.Name.ToUpper().CompareTo(p2.Name.ToUpper());
         }
     }
 }
