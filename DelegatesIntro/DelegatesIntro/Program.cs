@@ -3,6 +3,7 @@ using DelegatesIntro.Services;
 
 namespace DelegatesIntro
 {
+    delegate double BinaryNumericOperation(double n1, double n2);
     class Program
     {
         static void Main(string[] args)
@@ -10,7 +11,9 @@ namespace DelegatesIntro
             double a = 10.0;
             double b = 12.0;
 
-            double result = CalculationService.Sum(a, b);
+            BinaryNumericOperation op = CalculationService.Sum;
+
+            double result = op(a, b);
             Console.WriteLine(result);
         }
     }
