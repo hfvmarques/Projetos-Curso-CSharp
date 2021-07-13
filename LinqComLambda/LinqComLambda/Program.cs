@@ -43,11 +43,11 @@ namespace LinqComLambda
             var r5 = r4.Skip(2).Take(4);
             Print("TIER 1 ORDER BY PRICE THEN BY NAME SKIP 2 TAKE 4:", r5);
 
-            var r6 = products.First();
-            Console.WriteLine("First test1, " + r6);
+            var r6 = products.FirstOrDefault();
+            Console.WriteLine("First or default test1: " + r6);
 
-            var r7 = products.Where(p => p.Price > 3000.0).First();
-            Console.WriteLine("First test2" + r7);
+            var r7 = products.Where(p => p.Price > 3000.0).FirstOrDefault();
+            Console.WriteLine("First or default test2: " + r7);
         }
 
         static void Print<T>(string message, IEnumerable<T> collection)
